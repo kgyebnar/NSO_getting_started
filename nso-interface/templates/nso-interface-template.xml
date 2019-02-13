@@ -12,7 +12,7 @@
 
   <interface xmlns="http://tail-f.com/ned/cisco-nx">
       <loopback>
-        <name>0</name>
+        <name>{/interface-number}</name>
         <description>{/description}</description>
         <ip>
           <address>{/ip}/32</address>
