@@ -1,5 +1,5 @@
 <config-template xmlns="http://tail-f.com/ns/config/1.0"
-                 servicepoint="nso-interface">
+                 servicepoint="nso-lo-nxos-interface">
   <devices xmlns="http://tail-f.com/ns/ncs">
     <device>
       <!--
@@ -9,20 +9,17 @@
       -->
       <name>{/device}</name>
       <config>
-	<interface xmlns="urn:ios">
-          <Loopback>
-            <name>0</name>
-	    <description>{/name}</description>
-            <ip>
-              <address>
-                <primary>
-                  <address>127.0.0.1</address>
-                  <mask>255.0.0.0</mask>
-                </primary>
-              </address>
-            </ip>
-          </Loopback>
-          </interface>
+
+  <interface xmlns="http://tail-f.com/ned/cisco-nx">
+      <loopback>
+        <name>0</name>
+        <description>{/description}</description>
+        <ip>
+          <address>{/ip}/32</address>
+        </ip>
+      </loopback>
+      </interface>
+
         <!--
             Add device-specific parameters here.
             In this skeleton the service has a leaf "dummy"; use that
