@@ -1,0 +1,10 @@
+# NSO LAB packages for BEGINNERS
+
+Environment what you need to run these packages
+
+ncs-netsim list for  /home/gyebi/ncs/ncs-working/netsim
+
+name=cspna0 netconf=12022 snmp=11022 ipc=5010 cli=10022 dir=/home/gyebi/ncs/ncs-working/netsim/cspna/cspna0
+name=cspna1 netconf=12023 snmp=11023 ipc=5011 cli=10023 dir=/home/gyebi/ncs/ncs-working/netsim/cspna/cspna1
+name=cspna2 netconf=12024 snmp=11024 ipc=5012 cli=10024 dir=/home/gyebi/ncs/ncs-working/netsim/cspna/cspna2
+name=IOS0 netconf=12025 snmp=11025 ipc=5013 cli=10025 dir=/home/gyebi/ncs/ncs-working/netsim/IOS/IOS0

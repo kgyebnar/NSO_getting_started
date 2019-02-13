@@ -1,0 +1,54 @@
+module nso-lo-nxos-interface {
+  namespace "http://com/example/nsointerface";
+  prefix nso-lo-nxos-interface;
+
+  import ietf-inet-types {
+    prefix inet;
+  }
+  import tailf-ncs {
+    prefix ncs;
+  }
+
+  augment /ncs:services {
+  list nso-lo-nxos-interface {
+    key name;
+
+    uses ncs:service-data;
+    ncs:servicepoint "nso-lo-nxos-interface";
+
+    leaf name {
+	type string;
+    }
+
+    leaf description {
+      type string;
+    }
+
+    leaf interface-number {
+      type enumeration {
+        enum "0" {
+          value 0;
+        }
+        enum "1" {
+          value 1;
+        }
+        enum "111" {
+          value 111;
+        }
+      }
+    }
+
+    leaf ip {
+      type inet:ipv4-address;
+        description "the IP of the Radius server";
+    }
+
+    // may replace this with other ways of refering to the devices.
+    leaf-list device {
+      type leafref {
+        path "/ncs:devices/ncs:device/ncs:name";
+      }
+    }
+  }
+  } // augment /ncs:services {
+}
