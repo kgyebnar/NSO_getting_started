@@ -1,0 +1,29 @@
+module test {
+  namespace "http://com/example/bgltest";
+  prefix bgl-test;
+
+  container inventory{
+
+    leaf address {
+      type string;
+    }
+
+   leaf vlan {
+        type int64 {
+          range "1024..2000";
+        }
+    }
+
+    leaf vpc_name {
+        type string;
+      }
+
+      leaf another_some_value {
+          type int64 {
+      range "1..100";
+        }
+        }
+
+
+}
+}
