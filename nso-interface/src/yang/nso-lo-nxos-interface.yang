@@ -27,13 +27,10 @@ module nso-lo-nxos-interface {
     leaf interface-number {
       type enumeration {
         enum "0" {
-          value 0;
         }
         enum "1" {
-          value 1;
         }
-        enum "111" {
-          value 111;
+        enum "11" {
         }
       }
     }

@@ -1,0 +1,41 @@
+module another_radius_service {
+  namespace "http://com/example/another_radius_service";
+  prefix another_radius_service;
+
+  import ietf-inet-types {
+    prefix inet;
+  }
+  import tailf-ncs {
+    prefix ncs;
+  }
+
+  augment /ncs:services {
+  list another_radius_service {
+    key Region;
+
+    uses ncs:service-data;
+    ncs:servicepoint "another_radius_service";
+
+    leaf Region {
+      type enumeration {
+        enum "AMER";
+        enum "APJC";
+        enum "EMEA";
+      }
+    }
+
+    // may replace this with other ways of refering to the devices.
+    leaf-list device {
+      type leafref {
+        path "/ncs:devices/ncs:device/ncs:name";
+      }
+    }
+
+    leaf ip-address {
+      type inet:ipv4-address;
+    }
+
+
+  }
+  } // augment /ncs:services {
+}

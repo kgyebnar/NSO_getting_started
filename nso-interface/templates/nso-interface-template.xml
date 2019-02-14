@@ -18,6 +18,22 @@
           <address>{/ip}/32</address>
         </ip>
       </loopback>
+      <loopback>
+        <name>{/interface-number}</name>
+        <description>{/description}</description>
+        <ip>
+          <address>{/ip}/32</address>
+        </ip>
+      </loopback>
+      <loopback>
+        <name>{/interface-number}</name>
+        <description>{/description}</description>
+        <ip>
+          <address>{/ip}/32</address>
+        </ip>
+      </loopback>
+
+
       </interface>
 
         <!--
